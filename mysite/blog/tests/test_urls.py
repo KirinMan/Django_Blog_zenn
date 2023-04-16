@@ -3,6 +3,7 @@ from django.urls import reverse, resolve
 from ..views import IndexView, PostListView
 
 class TestUrls(TestCase):
+  """URLのテストクラス"""
 
   """index ページへのURLでアクセスする時のリダイレクトをテスト"""
   def test_post_index_url(self):
