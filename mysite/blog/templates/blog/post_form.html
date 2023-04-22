@@ -10,5 +10,6 @@
       </tr>
   </table>
   <button type="submit" class="btn btn-primary">送信</button>
+  <!-- CSRF (クロスサイトリクエストフォージェリ) という、入力フォームを利用した攻撃を防ぐ--> 
   {% csrf_token %}
 </form>
