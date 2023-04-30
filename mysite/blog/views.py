@@ -4,9 +4,6 @@ from django.urls import reverse_lazy
 from .forms import PostCreateForm
 from .models import Post # Postモデルをimport
 
-class IndexView(generic.TemplateView):
-    template_name = 'blog/index.html'
-
 class PostListView(generic.ListView):
     model = Post # 一覧表示させたいモデルを呼び出し
 
@@ -21,7 +18,7 @@ class PostDetailView(generic.DetailView):
 class PostUpdateView(generic.UpdateView):
     model = Post 
     form_class = PostCreateForm # PostCreateFormはそのまま活用できる
-    success_url = reverse_lazy('blog:post_detail')
+    success_url = reverse_lazy('blog:post_list')
 
 class PostDeleteView(generic.DeleteView):
     model = Post 
