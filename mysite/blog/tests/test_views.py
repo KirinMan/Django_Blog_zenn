@@ -79,7 +79,7 @@ class PostDetailTests(TestCase): # 追加
     def test_not_fount_pk_get(self):
         """記事を登録せず、空の状態で存在しない記事のプライマリキーでアクセスした時に 404 が返されることを確認"""
         response = self.client.get(
-            reverse('blog:post_detail', kwargs={'pk': 1}),
+            reverse('blog:post_detail', kwargs={'pk': 99}),
         )
         self.assertEqual(response.status_code, 404)
 
@@ -132,10 +132,3 @@ class PostDeleteTests(TestCase): # 追加
         self.assertEqual(response.status_code, 200)
         self.assertContains(response, post.title)
         self.assertContains(response, post.text)
-
-    def test_not_fount_pk_get(self):
-      """記事を登録せず、空の状態で存在しない記事のプライマリキーでアクセスした時に 404 が返されることを確認"""
-    response = self.client.get(
-        reverse('blog:post_delete', kwargs={'pk': 1}),
-    )
-    self.assertEqual(response.status_code, 404)

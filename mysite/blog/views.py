@@ -18,7 +18,7 @@ class PostCreateView(generic.CreateView): # 追加
 class PostDetailView(generic.DetailView): 
     model = Post # pk(primary key)はurls.pyでしているのでここではmodelを呼び出すだけ
 
-class postUpdateView(generic.UpdateView):
+class PostUpdateView(generic.UpdateView):
     model = Post 
     form_class = PostCreateForm # PostCreateFormはそのまま活用できる
     success_url = reverse_lazy('blog:post_detail')
